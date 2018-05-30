@@ -1,0 +1,32 @@
+# Project: Agenda
+# Makefile created by Dev-C++ 4.9.8.1
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = Agenda_private.res
+OBJ  = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+LIBS =  -L"C:/Compiladores & IDEs/DevCPP/lib" 
+INCS =  -I"C:/Compiladores & IDEs/DevCPP/include" 
+CXXINCS =  -I"C:/Compiladores & IDEs/DevCPP/include/c++"  -I"C:/Compiladores & IDEs/DevCPP/include/c++/mingw32"  -I"C:/Compiladores & IDEs/DevCPP/include/c++/backward"  -I"C:/Compiladores & IDEs/DevCPP/include" 
+BIN  = Agenda.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS = $(INCS)  -fmessage-length=0
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Agenda.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	$(CC) $(LINKOBJ) -o "Agenda.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CC) -c main.cpp -o main.o $(CFLAGS)
+
+Agenda_private.res: Agenda_private.rc 
+	$(WINDRES) -i Agenda_private.rc -I rc -o Agenda_private.res -O coff 

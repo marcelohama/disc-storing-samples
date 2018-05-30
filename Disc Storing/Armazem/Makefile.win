@@ -1,0 +1,32 @@
+# Project: Armazem
+# Makefile created by Dev-C++ 4.9.8.1
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = Armazem_private.res
+OBJ  = main.o $(RES)
+LINKOBJ  = main.o $(RES)
+LIBS =  -L"F:/DevCPP/lib" 
+INCS =  -I"F:/DevCPP/include" 
+CXXINCS =  -I"F:/DevCPP/include/c++"  -I"F:/DevCPP/include/c++/mingw32"  -I"F:/DevCPP/include/c++/backward"  -I"F:/DevCPP/include" 
+BIN  = Armazem.exe
+CXXFLAGS = $(CXXINCS) 
+CFLAGS = $(INCS)  -fmessage-length=0
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Armazem.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(LINKOBJ)
+	$(CPP) $(LINKOBJ) -o "Armazem.exe" $(LIBS)
+
+main.o: main.cpp
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Armazem_private.res: Armazem_private.rc 
+	$(WINDRES) -i Armazem_private.rc -I rc -o Armazem_private.res -O coff 

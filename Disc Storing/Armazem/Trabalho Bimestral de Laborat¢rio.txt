@@ -1,0 +1,10 @@
+PROJETO DO BIMESTRE
+=> Desenvolver um sistema para controle do estoque dos produtos de um armazém, onde devemos ter as seguintes opções:
+*Cadastro de produtos --> Permite a inclusão, alteração, exclusão lógica, pesquisa e exclusão física dos produtos. As informações sobre o produto;
+	Código ----------> Inteiro;
+	Descrição -------> String de 30 caracteres;
+	Preço de custo --> Real;
+	Preço de venda --> Real;
+*Compra ----------------> Entrada de produtos no estoque onde será possível: inclusão e exclusão (lógica e física). Quando for feita a inclusão de uma venda de um determinado produto, a quantidade em estoque do mesmo deve ser aumentada de acordo com a quantidade comprada. Os dados necessários são: codproduto(int), nomefornecedor(string40), datacompra(string10), quantcomprada(int)
+*Venda -----------------> Semelhante à compra, mas ao invés de acrescentar ao estoque, deve-se diminuir. Com as seguintes informações: codproduto(int), nomecliente(string40), datavenda(string10), quantvendida(int) (só será possível vender produtos em estoque);
+*Relatório -------------> Produtos, produtos em estoque, venda, vendas de um determinado produto, compra, compra por produto, venda por mês, compra por mês.
